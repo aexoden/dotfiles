@@ -1,4 +1,131 @@
-syntax on
+scriptencoding utf-8
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+"------------------------------------------------------------------------------
+" Basic Options
+"------------------------------------------------------------------------------
+
+" Disable compatibility with Vi
+set nocompatible
+
+" Enable useful backspacing
+set backspace=indent,eol,start
+
+" Show matching brackets
+set showmatch
+
+" Enable syntax highlighting and filetype detection
+syntax on
+filetype plugin indent on
+
+" Use UTF-8 by default
+set encoding=utf-8
+set fileencoding=utf-8
+
+" Enable backups, but keep them in a centralized location
+set backup
+set backupdir=$HOME/.vim/backups
+
+" Adjust the history and register-saving
+set history=4096
+set viminfo='1024,f0,<1024,s128,r/tmp,r/media
+
+" Resize the window when restoring a session
+set sessionoptions+=resize
+
+" Set up incremental and highlight searching
+set incsearch
+set hlsearch
+
+"------------------------------------------------------------------------------
+" Formatting Options
+"------------------------------------------------------------------------------
+
+" Enable automatic and intelligent indenting
+set autoindent
+set smartindent
+
+" By default, use four-space indents, without tabs
+" I can't make up my mind, so for now, use eight-space tabs. I mean, why not?
+"set shiftwidth=4
+"set softtabstop=4
+"set expandtab
+set tabstop=8
+set noexpandtab
+set shiftwidth=8
+set softtabstop=8
+
+" Get rid of text wrapping
+set textwidth=0
+let g:leave_my_textwidth_alone=1 
+
+" Set up folding
+set foldcolumn=2
+set foldmethod=syntax
+set foldlevel=10
+
+" Show trailing whitespace visually
+" set list listchars=eol:\ ,tab:»·,trail:·,precedes:…,extends:…,nbsp:‗
+set list listchars=eol:\ ,tab:\ \ ,trail:·,precedes:…,extends:…,nbsp:‗
+
+" Set up Vala highlighting
+autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+au BufRead,BufNewFile *.vala            setfiletype vala
+au BufRead,BufNewFile *.vapi            setfiletype vala
+
+"------------------------------------------------------------------------------
+" GUI Options
+"------------------------------------------------------------------------------
+
+" Use 256 colors
+set t_Co=256
+
+" Choose a good color scheme
+colorscheme inkpot
+
+" Highlight the line the cursor is on
+set cursorline
+
+" Select a good, small font
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 8
+
+" Show the ruler
+set ruler
+
+" Show line numbers
+set number
+
+" Show the tab completion menu
+set wildmenu
+
+"------------------------------------------------------------------------------
+" Show a nice status bar, borrowed from Ciaran McCreesh
+"------------------------------------------------------------------------------
+
+set laststatus=2
+set statusline=
+set statusline+=%2*%-3.3n%0*\                " buffer number
+set statusline+=%f\                          " file name
+if has("eval")
+    let g:scm_cache = {}
+    fun! ScmInfo()
+        let l:key = getcwd()
+        if ! has_key(g:scm_cache, l:key)
+            if (isdirectory(getcwd() . "/.git"))
+                let g:scm_cache[l:key] = "[" . substitute(readfile(getcwd() . "/.git/HEAD", "", 1)[0],
+                            \ "^.*/", "", "") . "] "
+            else
+                let g:scm_cache[l:key] = ""
+            endif
+        endif
+        return g:scm_cache[l:key]
+    endfun
+    set statusline+=%{ScmInfo()}             " scm info
+endif
+set statusline+=%h%1*%m%r%w%0*               " flags
+set statusline+=\[%{strlen(&ft)?&ft:'none'}, " filetype
+set statusline+=%{&encoding},                " encoding
+set statusline+=%{&fileformat}]              " file format
+set statusline+=%=                           " right align
+set statusline+=%2*0x%-8B\                   " current char
+set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
