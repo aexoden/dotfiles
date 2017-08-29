@@ -1,5 +1,29 @@
 "*":
+  "autocomplete-plus":
+    confirmCompletion: "enter"
+    fileBlacklist: [
+      "*.md"
+      "*.txt"
+    ]
   core:
     telemetryConsent: "limited"
+  editor:
+    softTabs: false
+    tabLength: 4
   "exception-reporting":
     userId: "2c613f71-39b8-42c5-bef0-f61d264be689"
+  "git-diff":
+    showIconsInEditorGutter: true
+  "line-ending-selector":
+    defaultLineEnding: "LF"
+  "markdown-preview":
+    breakOnSingleNewline: true
+    useGitHubStyle: true
+  tabs:
+    enableVcsColoring: true
+  "tree-view":
+    alwaysOpenExisting: true
+  whitespace: {}
+".plain.text":
+  editor:
+    tabLength: 8
