@@ -23,6 +23,9 @@
   "tree-view":
     alwaysOpenExisting: true
   whitespace: {}
+".gfm.source":
+  editor:
+    tabLength: 8
 ".plain.text":
   editor:
     tabLength: 8
