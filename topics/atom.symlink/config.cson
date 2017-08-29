@@ -5,6 +5,8 @@
       "*.md"
       "*.txt"
     ]
+  "color-picker":
+    uppercaseColorValues: true
   core:
     telemetryConsent: "limited"
   editor:
