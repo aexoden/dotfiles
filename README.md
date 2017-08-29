@@ -32,8 +32,11 @@ scripts/bootstrap
 This will symlink the appropriate files in `.dotfiles` to your home directory.
 Everything is configured and tweaked within `~/.dotfiles`.
 
-You will probably want to modify `topics/zsh/zshrc.symlink`, as it provides the
+You will probably want to modify `topics/zsh/config.zsh`, as it provides the
 basic configuration for your shell.
+
+If you have any local environment variables you need to define, do so in
+`$HOME/.localrc`. They will be automatically loaded.
 
 If you are using [Atom](https://atom.io), you may find the `atom-package-backup`
 and `atom-package-install` commands useful. `atom-package-backup` will generate
