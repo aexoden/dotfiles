@@ -1,3 +1,5 @@
+export EDITOR=vim
+
 HISTFILE=~/.zsh_history
 HISTSIZE=32768
 SAVEHIST=32768
