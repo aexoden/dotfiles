@@ -35,6 +35,11 @@ Everything is configured and tweaked within `~/.dotfiles`.
 You will probably want to modify `topics/zsh/zshrc.symlink`, as it provides the
 basic configuration for your shell.
 
+If you are using [Atom](https://atom.io), you may find the `atom-package-backup`
+and `atom-package-install` commands useful. `atom-package-backup` will generate
+a list of installed packages, and `atom-package-install` will install packages
+from that list. This allows you to commit the list of installed packages.
+
 ## Components
 
 There are several special files in the hierarchy:
