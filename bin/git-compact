@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Aggressively compacts a git repository, showing the change in size.
+#
+# Examples
+#
+#   git compact
+
+du -chs .
+git gc --aggressive
+du -chs .
