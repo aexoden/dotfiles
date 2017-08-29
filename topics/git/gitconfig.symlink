@@ -1,0 +1,8 @@
+[include]
+        path = ~/.gitconfig.local
+[mergetool]
+        keepBackup = false
+[help]
+        autocorrect = 1
+[push]
+        default = simple

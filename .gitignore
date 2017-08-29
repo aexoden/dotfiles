@@ -1,5 +1,5 @@
-git/gitconfig.local.symlink
 topics/atom.symlink/.apm
 topics/atom.symlink/blob-store
 topics/atom.symlink/compile-cache
 topics/atom.symlink/storage
+topics/git/gitconfig.local.symlink
