@@ -19,6 +19,11 @@
   "linter-clang":
     clangDefaultCFlags: "-Weverything"
     clangDefaultCppFlags: "-std=c++1z -Weverything -Wno-c++98-compat -Wno-padded -Wno-c++98-compat-pedantic"
+  "linter-pylama":
+    useIsort: true
+  "linter-stylelint":
+    disableWhenNoConfig: false
+    useStandard: true
   "markdown-preview":
     useGitHubStyle: true
   tabs:
