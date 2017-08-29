@@ -28,11 +28,23 @@
     useStandard: true
   "markdown-preview":
     useGitHubStyle: true
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      pigments: true
+      pigmentsDecorationsZIndex: 0
+  "project-plus": {}
   tabs:
     enableVcsColoring: true
   "tree-view":
     alwaysOpenExisting: true
   whitespace: {}
+  zentabs:
+    maximumOpenedTabs: 8
+    neverCloseDirty: true
+    neverCloseNew: true
+    neverCloseUnsaved: true
 ".gfm.source":
   editor:
     tabLength: 8
