@@ -1,5 +1,7 @@
 topics/atom.symlink/.apm
+topics/atom.symlink/.node-gyp
 topics/atom.symlink/blob-store
 topics/atom.symlink/compile-cache
+topics/atom.symlink/packages
 topics/atom.symlink/storage
 topics/git/gitconfig.local.symlink
