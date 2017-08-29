@@ -16,6 +16,9 @@
     showIconsInEditorGutter: true
   "line-ending-selector":
     defaultLineEnding: "LF"
+  "linter-clang":
+    clangDefaultCFlags: "-Weverything"
+    clangDefaultCppFlags: "-std=c++1z -Weverything -Wno-c++98-compat -Wno-padded -Wno-c++98-compat-pedantic"
   "markdown-preview":
     useGitHubStyle: true
   tabs:
