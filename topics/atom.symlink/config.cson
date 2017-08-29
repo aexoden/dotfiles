@@ -17,7 +17,6 @@
   "line-ending-selector":
     defaultLineEnding: "LF"
   "markdown-preview":
-    breakOnSingleNewline: true
     useGitHubStyle: true
   tabs:
     enableVcsColoring: true
