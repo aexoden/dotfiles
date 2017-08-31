@@ -8,6 +8,9 @@
   "color-picker":
     uppercaseColorValues: true
   core:
+    disabledPackages: [
+      "whitespace"
+    ]
     telemetryConsent: "limited"
   editor:
     softTabs: false
