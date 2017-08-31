@@ -25,6 +25,7 @@
     clangDefaultCFlags: "-Weverything"
     clangDefaultCppFlags: "-std=c++1z -Weverything -Wno-c++98-compat -Wno-padded -Wno-c++98-compat-pedantic"
   "linter-pylama":
+    ignoreErrorsAndWarnings: "D100,D101,D102,D103,D105,E265,E501,W191"
     useIsort: true
   "linter-stylelint":
     disableWhenNoConfig: false
