@@ -40,7 +40,8 @@
       "highlight-selectedDecorationsZIndex": 0
       pigments: true
       pigmentsDecorationsZIndex: 0
-  "project-plus": {}
+  "project-plus":
+    projectHome: " ~/projects"
   tabs:
     enableVcsColoring: true
   "tree-view":
