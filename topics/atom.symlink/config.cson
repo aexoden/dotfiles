@@ -1,6 +1,7 @@
 "*":
   "autocomplete-plus":
     confirmCompletion: "enter"
+    enableAutoActivation: false
     fileBlacklist: [
       "*.md"
       "*.txt"
@@ -46,6 +47,8 @@
     enableVcsColoring: true
   "tree-view":
     alwaysOpenExisting: true
+  welcome:
+    showOnStartup: false
   whitespace: {}
   zentabs:
     maximumOpenedTabs: 8
