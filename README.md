@@ -23,7 +23,7 @@ prefix and without the extension into `$HOME` when you run `scripts/bootstrap`.
 I recommend you [fork the repository](https://github.com/aexoden/dotfiles/fork),
 remove anything you don't need or want, and add or modify anything you do.
 
-```sh
+```zsh
 git clone https://github.com/aexoden/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 scripts/bootstrap
@@ -37,11 +37,6 @@ basic configuration for your shell.
 
 If you have any local environment variables you need to define, do so in
 `$HOME/.localrc`. They will be automatically loaded.
-
-If you are using [Atom](https://atom.io), you may find the `atom-package-backup`
-and `atom-package-install` commands useful. `atom-package-backup` will generate
-a list of installed packages, and `atom-package-install` will install packages
-from that list. This allows you to commit the list of installed packages.
 
 ## Components
 
