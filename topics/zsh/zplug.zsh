@@ -10,7 +10,7 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'zsh-users/zsh-syntax-highlighting'
 
 zplug 'mafredri/zsh-async', from:github
-zplug 'sindresorhus/pure', use:pure.zsh, from:github, as:theme
+zplug 'romkatv/powerlevel10k', from:github, as:theme
 
 zplug 'jreese/zsh-titles', from:github
 
