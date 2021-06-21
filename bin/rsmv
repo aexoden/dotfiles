@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+rsync -aP --remove-source-files "$@" && rm -vrf "${@:1:$#-1}"
