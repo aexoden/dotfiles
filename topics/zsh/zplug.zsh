@@ -12,7 +12,7 @@ zplug 'zsh-users/zsh-syntax-highlighting'
 zplug 'mafredri/zsh-async', from:github
 zplug 'romkatv/powerlevel10k', from:github, as:theme
 
-zplug 'jreese/zsh-titles', from:github
+zplug 'trystan2k/zsh-tab-title', from:github
 
 if ! zplug check --verbose ; then
     printf "Install zplug plugins? [y/N]: "
