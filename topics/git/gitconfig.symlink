@@ -8,5 +8,3 @@
         keepBackup = false
 [push]
         default = simple
-[commit]
-	gpgSign = true

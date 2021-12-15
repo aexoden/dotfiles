@@ -130,6 +130,27 @@ setup_gitconfig () {
 	email = $git_authoremail
 EOF
 
+		userinput ' * What is your GPG signing key fingerprint (blank for none)?'
+		read -e git_signingkey
+
+		if [ ! -z "$git_signingkey" ] ; then
+			echo "	signingkey = $git_signingkey" >> $GITCONFIG_LOCAL
+
+			userinput ' * Do you want to sign commits by default (Y/n)?'
+			read -e git_sign_by_default
+
+			case "$git_sign_by_default" in
+				[nN])
+					;;
+				*)
+					echo "[commit]" >> $GITCONFIG_LOCAL
+					echo "	gpgSign = true" >> $GITCONFIG_LOCAL
+					;;
+			esac
+		else
+			echo
+		fi
+
 		success 'git configured!'
 	fi
 }
