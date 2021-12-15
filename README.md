@@ -53,7 +53,8 @@ There are several special files in the hierarchy:
 - **\*/\*.symlink**: Any file ending in `*.symlink` will be symlinked into your
   `$HOME`. This is so you can keep all of those files versioned in your dotfiles
   directory, but still keep them in your home directory. The symlinks are
-  generated when you run `scripts/bootstrap`.
+  generated when you run `scripts/bootstrap`. Any instances of double underscores
+  (`__`) will be replaced with a forward slash, allowing deeper symlinking.
 
 ## Bugs
 
