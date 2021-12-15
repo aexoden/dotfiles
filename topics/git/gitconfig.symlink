@@ -1,9 +1,11 @@
 [include]
         path = ~/.gitconfig.local
-[mergetool]
-        keepBackup = false
+[init]
+	defaultBranch = main
 [help]
         autocorrect = 1
+[mergetool]
+        keepBackup = false
 [push]
         default = simple
 [commit]
