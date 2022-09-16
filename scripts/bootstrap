@@ -51,6 +51,12 @@ link_file () {
 
 	local action=
 
+	local dst_dir=$(dirname $dst)
+
+	if [ ! -d $dst_dir ] ; then
+		mkdir -p $dst_dir
+	fi
+
 	if [ -f "$dst" -o -d "$dst" -o -L "$dst" ] ; then
 		if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ] ; then
 			local current_src="$(readlink -f $dst)"
