@@ -1,4 +1,4 @@
-export EDITOR=vim
+export EDITOR=nano
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1048576
