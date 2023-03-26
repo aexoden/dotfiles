@@ -23,7 +23,3 @@ setopt HIST_REDUCE_BLANKS
 setopt COMPLETE_ALIASES
 
 unsetopt NOMATCH
-
-bindkey '^[[H' beginning-of-line
-bindkey '^[[F' end-of-line
-bindkey '\e[3~' delete-char
