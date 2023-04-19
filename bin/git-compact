@@ -6,6 +6,13 @@
 #
 #   git compact
 
-du -chs .
+echo "Initial Apparent Total Size: $(du --apparent-size -hs | cut -f1)"
+echo "Initial Apparent Git Size: $(du --apparent-size -hs .git | cut -f1)"
+
+echo
+echo "Compressing..."
 git gc --aggressive
-du -chs .
+
+echo
+echo "Final Apparent Total Size: $(du --apparent-size -hs | cut -f1)"
+echo "Final Apparent Git Size: $(du --apparent-size -hs .git | cut -f1)"
