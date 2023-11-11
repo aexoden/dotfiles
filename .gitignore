@@ -4,4 +4,4 @@ topics/atom.symlink/blob-store
 topics/atom.symlink/compile-cache
 topics/atom.symlink/packages
 topics/atom.symlink/storage
-topics/git/gitconfig.local.symlink
+topics/git/config__git__config.local.symlink

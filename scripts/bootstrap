@@ -119,7 +119,7 @@ link_file () {
 }
 
 setup_gitconfig () {
-	GITCONFIG_LOCAL=topics/git/gitconfig.local.symlink
+	GITCONFIG_LOCAL=topics/git/config__git__config.local.symlink
 
 	if ! [ -f $GITCONFIG_LOCAL ] ; then
 		info 'Configuring git...'
