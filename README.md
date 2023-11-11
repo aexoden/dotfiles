@@ -26,6 +26,8 @@ remove anything you don't need or want, and add or modify anything you do.
 ```zsh
 git clone https://github.com/aexoden/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
+git submodule init
+git submodule update
 scripts/bootstrap
 ```
 
