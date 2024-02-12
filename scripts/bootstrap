@@ -34,14 +34,17 @@ install_dotfiles () {
 	local backup_all=false
 	local skip_all=false
 
-	for src in $(find -H "$DOTFILES_ROOT" -name '*.symlink' -not -path '*.git*') ; do
+	declare -a src_paths
+	readarray -d '' src_paths < <(find -H "$DOTFILES_ROOT" \( -name '*.copy' -o -name '*.symlink' \) -not -path '*.git*' -print0)
+
+	for src in "${src_paths[@]}"; do
 		dst="$HOME/.$(basename "${src%.*}")"
 		dst="${dst//__/\/}"
-		link_file "$src" "$dst"
+		link_or_copy_file "$src" "$dst"
 	done
 }
 
-link_file () {
+link_or_copy_file () {
 	local src=$1
 	local dst=$2
 
@@ -68,7 +71,15 @@ link_file () {
 
 			if [ "$current_src" == "$compare_src" ]; then
 				skip=true
-			else
+			fi
+
+			if [[ "$src" == *.copy ]]; then
+				if diff -q "$src" "$dst" > /dev/null; then
+					skip=true
+				fi
+			fi
+
+			if [ "$skip" != "true" ] ; then
 				userinput "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
 		[s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
 				read -n 1 action
@@ -118,8 +129,15 @@ link_file () {
 	fi
 
 	if [ "$skip" != "true" ] ; then
-		ln -sr "$src" "$dst"
-		success "Symlinked $dst -> $src"
+		if [[ "$src" == *.copy ]] ; then
+			cp -r "$src" "$dst"
+			success "Copied $src -> $dst"
+		elif [[ "$src" == *.symlink ]] ; then
+			ln -sr "$src" "$dst"
+			success "Symlinked $dst -> $src"
+		else
+			fail "Encountered an unexpected path: $src"
+		fi
 	fi
 }
 
