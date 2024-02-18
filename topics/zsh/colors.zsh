@@ -10,7 +10,7 @@ export LESSOPEN='|lesspipe.sh %s'
 export LESSCOLOR=always
 
 if command -v bat > /dev/null ; then
-	alias cat='bat --paging=never'
+	alias batcat='bat --paging=never'
 
 	batman() {
 		MANROFFOPT="-c" MANPAGER="sh -c 'col -bx | bat -l man -p'" man $@
