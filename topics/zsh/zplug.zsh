@@ -13,7 +13,7 @@ zplug 'zsh-users/zsh-autosuggestions'
 zplug 'mafredri/zsh-async', from:github
 zplug 'romkatv/powerlevel10k', from:github, as:theme
 
-zplug 'trystan2k/zsh-tab-title', from:github
+zplug 'trystan2k/zsh-tab-title', from:github, at:main
 
 if ! zplug check --verbose ; then
     printf "Install zplug plugins? [y/N]: "
