@@ -377,8 +377,6 @@ set -g mouse on
 #set -g status-position top
 
 set -g activity-action none
-bind-key -n Home send Escape "[H"
-bind-key -n End send Escape "[F"
 
 
 # -- tpm -----------------------------------------------------------------------
